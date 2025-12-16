@@ -1,0 +1,76 @@
+function generateObsidianIndex_v4_AutoUpdate() {
+  // =========================================================
+  // 1. 設定區：請填入您的 Folder ID (網址或 ID 皆可)務必要輸入正確的ID 
+  var inputId = "Folder ID"; 
+  
+  // 2. 設定：固定檔名 (你可依需求取檔名)
+  var fixedFileName = "Drive_Index_gavin49.md";
+  // =========================================================
+
+  try {
+    var folderId = extractId(inputId);
+    var folder = DriveApp.getFolderById(folderId);
+    
+    // 建立檔案內容 (Header)
+    var updateTime = new Date();
+    // 格式化時間為 YYYY-MM-DD HH:mm
+    var timeString = Utilities.formatDate(updateTime, Session.getScriptTimeZone(), "yyyy-MM-dd HH:mm");
+    
+    var mdContent = "# Google Drive 檔案索引 (自動更新)\n";
+    mdContent += "> 🔄 最後同步時間：" + timeString + "\n\n";
+
+    // 開始掃描
+    console.log("正在掃描資料夾...");
+    processFolder(folder, "");
+    
+    // 關鍵邏輯：檢查檔案是否存在
+    var files = folder.getFilesByName(fixedFileName);
+    if (files.hasNext()) {
+      // 如果檔案存在，直接覆蓋內容 (更新)
+      var file = files.next();
+      file.setContent(mdContent);
+      console.log("✅ 索引檔已更新 (覆蓋)：" + fixedFileName);
+    } else {
+      // 如果檔案不存在，建立新檔案
+      folder.createFile(fixedFileName, mdContent);
+      console.log("✅ 新索引檔已建立：" + fixedFileName);
+    }
+
+  } catch (e) {
+    console.error("❌ 發生錯誤：" + e.toString());
+  }
+
+  // --- 內部工具函式 ---
+
+  function processFolder(currentFolder, parentPath) {
+    // 路徑處理
+    var currentPath = parentPath ? parentPath + "/" + currentFolder.getName() : currentFolder.getName();
+    
+    var files = currentFolder.getFiles();
+    var subfolders = currentFolder.getFolders();
+    
+    while (files.hasNext()) {
+      var file = files.next();
+      // 排除索引檔自己，避免迴圈
+      if (file.getName() === fixedFileName) continue;
+
+      mdContent += "---\n";
+      mdContent += "file_name: " + file.getName() + "\n";
+      mdContent += "url: " + file.getUrl() + "\n";
+      mdContent += "path: " + currentPath + "\n";
+      mdContent += "---\n\n"; // 確保有空行
+    }
+    
+    while (subfolders.hasNext()) {
+      processFolder(subfolders.next(), currentPath);
+    }
+  }
+
+  function extractId(str) {
+    str = str.trim();
+    if (str.indexOf("folders/") !== -1) {
+      return str.split("folders/")[1].split("?")[0].split("/")[0];
+    }
+    return str;
+  }
+}
