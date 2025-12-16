@@ -268,6 +268,8 @@ MIT License - 歡迎 fork、改進、分享！
 
 **⭐ 給個 Star 支持開發！感謝您的使用！**
 
+[created by linkc @ Yilan Taiwan ](https://gavintux.github.io/yi/)
+
 ![Demo GIF](demo.gif)
 
 </div>
