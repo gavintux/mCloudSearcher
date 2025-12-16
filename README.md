@@ -1,5 +1,5 @@
 # 🔍 mCloudSearcher多雲端檔案整合搜尋系統
-
+<div align="center">
 <img src="https://img.shields.io/badge/Obsidian-DataviewJS-blueviolet?style=flat-square" alt="Obsidian">
 <img src="https://img.shields.io/badge/Google%20Drive-GAS-green?style=flat-square" alt="Google Apps Script">
 <img src="https://img.shields.io/badge/pCloud-Python-orange?style=flat-square" alt="pCloud">
