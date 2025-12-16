@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/badge/Obsidian-DataviewJS-blueviolet?style=flat-square" alt="Obsidian">
 <img src="https://img.shields.io/badge/Google%20Drive-GAS-green?style=flat-square" alt="Google Apps Script">
 <img src="https://img.shields.io/badge/pCloud-Python-orange?style=flat-square" alt="pCloud">
-<img src="https://img.shields.io/badge/apple-Dropbox-Bash-brightgreen?style=flat-square" alt="Bash">
+<img src="https://img.shields.io/badge/Dropbox-Bash-brightgreen?style=flat-square" alt="Bash">
 
 **一鍵搜尋 Google Drive、pCloud、iCloud、Dropbox 的所有檔案！**
 
