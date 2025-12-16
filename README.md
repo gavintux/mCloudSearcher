@@ -19,10 +19,9 @@
 - ✅ **樹狀檢視**：自動產生資料夾結構，快速導航
 - ✅ **跨平台**：Windows、macOS、Linux 完整支援
 
-## 📁 檔案結構
+## 📁 Obsidian Vault 檔案結構
 
 ```
-
 📁 Drive_Index/           \# 索引檔案存放區
 ├── Drive_Index_gavin49.md  \# Google Drive
 ├── Drive_Index_pCloud.md   \# pCloud
