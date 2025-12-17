@@ -257,12 +257,10 @@ rclone config  \# 新增遠端 → 掛載後修改腳本路徑
 
 ## 📄 授權與貢獻
 
-```
 
 MIT License - 歡迎 fork、改進、分享！
 如有問題請開 Issue 或 Pull Request
 
-```
 
 <div align="center">
 
@@ -273,4 +271,12 @@ MIT License - 歡迎 fork、改進、分享！
 ![Demo GIF](demo.gif)
 
 </div>
-```
+
+## 支持與贊助 (Support)
+
+如果您覺得這個專案對您有幫助，歡迎請我喝杯咖啡，這將是我持續維護的最大動力！
+
+> **說明**：這是一個個人興趣專案。為了保持開發的熱情與初衷，我原則上**不接受**付費要求功能的開發 (Bug Bounty/Feature Request)。
+
+<a href="https://www.buymeacoffee.com/gavintux" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
